@@ -1,0 +1,20 @@
+$ns: ".site-home";
+
+#{$ns} {
+  overflow: hidden;
+  max-width: $absolute-max-width;
+  margin: 0 auto;
+
+  &__bg {
+    background-image: url("../../images/home_image.jpg");
+    height: 90vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  &__message-icon {
+    margin-left: 8px;
+  }
+}

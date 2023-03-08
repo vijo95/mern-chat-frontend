@@ -1,0 +1,40 @@
+$ns: ".site-signup";
+
+#{$ns} {
+  overflow: hidden;
+  max-width: $absolute-max-width;
+  margin: 0 auto;
+
+  &__bg {
+    background-image: url("../../images/signup_image.jpg");
+    height: 90vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 700px;
+    padding: 0 40px;
+  }
+
+  &__container-profile-image {
+    margin: 0 auto;
+    position: relative;
+    width: 150px;
+  }
+
+  &__profile-image {
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__add-picture-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    cursor: pointer;
+  }
+}

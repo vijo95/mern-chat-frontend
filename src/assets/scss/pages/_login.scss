@@ -1,0 +1,22 @@
+$ns: ".site-login";
+
+#{$ns} {
+  overflow: hidden;
+  max-width: $absolute-max-width;
+  margin: 0 auto;
+
+  &__bg {
+    background-image: url("../../images/login_image.jpg");
+    height: 90vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 700px;
+    padding: 0 40px;
+  }
+}

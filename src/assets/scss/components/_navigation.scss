@@ -1,0 +1,11 @@
+$ns: ".navigation";
+
+#{$ns} {
+  &__profile-image {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+}
