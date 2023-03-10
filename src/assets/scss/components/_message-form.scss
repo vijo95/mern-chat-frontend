@@ -11,5 +11,53 @@ $ns: ".message-form";
     border: 1px solid lightgray;
     overflow-y: scroll;
     margin-bottom: 16px;
+    padding: 16px;
+  }
+
+  &__container-message {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 4px 0;
+    background-color: #128c7e;
+    padding: 4px;
+    border-radius: 4px;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  &__own-message {
+    margin-left: auto;
+    background-color: #34b7f1;
+  }
+
+  &__sender-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__sender-profile-image {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__sender-name {
+    font-weight: 700;
+    color: white;
+    font-size: 18px;
+  }
+
+  &__message-content {
+    color: white;
+    font-weight: 500;
+  }
+
+  &__message-time {
+    color: whitesmoke;
+    font-size: 12px;
   }
 }

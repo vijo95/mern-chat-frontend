@@ -10,6 +10,7 @@ export const Navigation = () => {
   const user = useSelector((state: any) => state?.user);
   const [logoutUser] = useLogoutUserMutation();
 
+  // logout
   const handleLogout = async (e: any) => {
     e.preventDefault();
     await logoutUser(user);

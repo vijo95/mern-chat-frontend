@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import profile from "../assets/images/profile_image.jpeg";
 import { useSignupUserMutation } from "../services/api";
@@ -20,7 +21,15 @@ export default function Signup() {
   const [imagePreview, setImagePreview] = useState<any>(null);
 
   const [signupUser, { isLoading, error }] = useSignupUserMutation();
+  const user = useSelector((state: any) => state?.user);
 
+  useEffect(() => {
+    if (user) {
+      navigate("/chat");
+    }
+  }, []);
+
+  // validate image
   const validateImage = (e: any) => {
     const file = e.target.files[0];
     if (1048576 <= file.size) {
@@ -31,6 +40,7 @@ export default function Signup() {
     }
   };
 
+  // upload image
   const uploadImage = async () => {
     const data = new FormData();
     data.append("file", image);
@@ -53,17 +63,16 @@ export default function Signup() {
     }
   };
 
+  // sign up
   const handleSignup = async (e: any) => {
     e.preventDefault();
     if (!image) {
       return alert("Please upload your profile picture");
     }
     const url = await uploadImage();
-    console.log(url);
     // TO DO: signup
     signupUser({ name, email, password, picture: url }).then((data) => {
       if (data) {
-        console.log(data);
         navigate("/chat");
       }
     });
